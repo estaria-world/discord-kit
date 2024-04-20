@@ -8,10 +8,10 @@ import java.io.File
  * @author Niklas Nieberler
  */
 
-class ConfigLoader : ConfigLoader<Config>(
+class DefaultConfigLoader : ConfigLoader<DefaultConfig>(
     File("config.yaml"),
     YamlFileFormatter(
-        Config.serializer(),
+        DefaultConfig.serializer(),
     ),
-    { Config.Default.get() }
+    { DefaultConfig.Default.get() }
 )

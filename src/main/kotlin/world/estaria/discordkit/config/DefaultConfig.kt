@@ -7,9 +7,10 @@ import kotlinx.serialization.Serializable
  */
 
 @Serializable
-class Config(
+class DefaultConfig(
     val token: String,
-    private val activity: Activity
+    private val activity: Activity,
+    val memberOwnerIds: Array<String>
 ) {
 
     @Serializable
@@ -19,8 +20,17 @@ class Config(
     )
 
     object Default {
-        fun get(): Config {
-            return Config("", Activity("", net.dv8tion.jda.api.entities.Activity.ActivityType.PLAYING))
+        fun get(): DefaultConfig {
+            return DefaultConfig(
+                "",
+                Activity(
+                    "",
+                    net.dv8tion.jda.api.entities.Activity.ActivityType.PLAYING
+                ),
+                arrayOf(
+                    "123"
+                )
+            )
         }
     }
 

@@ -14,11 +14,11 @@ object DiscordBotConfigFactory {
      * Creates a new bot shard instance
      */
     fun create(): DefaultShardManagerBuilder {
-        val config = ConfigLoader().load()
+        val config = DefaultConfigLoader().load()
         return createWithConfig(config)
     }
 
-    private fun createWithConfig(config: Config): DefaultShardManagerBuilder {
+    private fun createWithConfig(config: DefaultConfig): DefaultShardManagerBuilder {
         return DefaultShardManagerBuilder.createDefault(config.token)
             .setStatus(OnlineStatus.ONLINE)
             .setActivity(config.toActivity())
