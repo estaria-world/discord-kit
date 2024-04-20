@@ -9,8 +9,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 class DefaultConfig(
     val token: String,
-    private val activity: Activity,
-    val memberOwnerIds: Array<String>
+    private val activity: Activity
 ) {
 
     @Serializable
@@ -26,9 +25,6 @@ class DefaultConfig(
                 Activity(
                     "",
                     net.dv8tion.jda.api.entities.Activity.ActivityType.PLAYING
-                ),
-                arrayOf(
-                    "123"
                 )
             )
         }
