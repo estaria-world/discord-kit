@@ -1,14 +1,19 @@
 package world.estaria.discordkit.channel
 
+import world.estaria.discordkit.Key
+
 /**
  * @author Niklas Nieberler
  */
 
-interface DiscordChannelKey {
+interface DiscordChannelKey : Key {
 
     /**
-     * @return name of the enum name
+     * Gets you the value of the key via the discord-channel config
+     * @return id of the config
      */
-    fun getKey(): String
+    fun getId(): String? {
+        return DiscordChannel.get(getKey())
+    }
 
 }
