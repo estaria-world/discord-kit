@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
  */
 
 @Serializable
-class BotConfig(
+class Config(
     val token: String,
     private val activity: Activity
 ) {
@@ -19,8 +19,8 @@ class BotConfig(
     )
 
     object Default {
-        fun get(): BotConfig {
-            return BotConfig("", Activity("", net.dv8tion.jda.api.entities.Activity.ActivityType.PLAYING))
+        fun get(): Config {
+            return Config("", Activity("", net.dv8tion.jda.api.entities.Activity.ActivityType.PLAYING))
         }
     }
 

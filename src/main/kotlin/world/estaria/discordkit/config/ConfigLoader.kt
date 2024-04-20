@@ -8,10 +8,10 @@ import java.io.File
  * @author Niklas Nieberler
  */
 
-class BotConfigLoader : ConfigLoader<BotConfig>(
+class ConfigLoader : ConfigLoader<Config>(
     File("config.yaml"),
     YamlFileFormatter(
-        BotConfig.serializer(),
+        Config.serializer(),
     ),
-    { BotConfig.Default.get() }
+    { Config.Default.get() }
 )
