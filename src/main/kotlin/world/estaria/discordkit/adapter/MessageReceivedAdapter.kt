@@ -17,7 +17,8 @@ abstract class MessageReceivedAdapter(
 
     override fun onMessageReceived(event: MessageReceivedEvent) {
         val channel = event.channel
-        if (event.member!!.isOwner || channel.id != this.channelKey.getId())
+        val member = event.member ?: return
+        if (member.isOwner || channel.id != this.channelKey.getId())
             return
 
         event.message.delete().queue()
