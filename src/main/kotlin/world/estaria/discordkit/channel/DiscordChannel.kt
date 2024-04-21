@@ -25,7 +25,7 @@ object DiscordChannel {
      * @return value of the config
      */
     fun get(key: String): String? {
-        return this.discordChannelConfig.map[key]
+        return this.discordChannelConfig.channels[key]
     }
 
 }

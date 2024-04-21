@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 class DiscordChannelConfig(
-    val map: Map<String, String>
+    val channels: Map<String, String>
 ) {
 
     object Default {
