@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "world.estaria"
-version = "1.0.2"
+version = "1.0.4"
 
 repositories {
     mavenCentral()
@@ -20,7 +20,7 @@ dependencies {
     runtimeOnly("world.avionik:config-kit:1.0.2")
 
     // discord dependencies
-    api("net.dv8tion:JDA:5.0.0-beta.18") {
+    api("net.dv8tion:JDA:5.0.0-beta.23") {
         exclude("opus-java")
     }
 
