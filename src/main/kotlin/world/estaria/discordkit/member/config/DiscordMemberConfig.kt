@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 class DiscordMemberConfig(
-    val map: Map<String, String>
+    val members: Map<String, String>
 ) {
 
     object Default {

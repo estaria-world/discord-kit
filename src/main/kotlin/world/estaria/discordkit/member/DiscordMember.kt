@@ -26,7 +26,7 @@ object DiscordMember {
      * @return value of the config
      */
     fun get(key: String): String? {
-        return this.discordMemberConfig.map[key]
+        return this.discordMemberConfig.members[key]
     }
 
 }
