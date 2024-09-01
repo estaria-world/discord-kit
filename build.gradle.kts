@@ -38,12 +38,9 @@ tasks.named("shadowJar", ShadowJar::class) {
 publishing {
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/estaria-world/discord-kit")
-            credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
-            }
+            name = "estaria"
+            url = uri("https://repo.estaria.world/releases")
+            credentials(PasswordCredentials::class.java)
         }
     }
     publications {
